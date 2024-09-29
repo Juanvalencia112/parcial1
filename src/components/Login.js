@@ -57,10 +57,12 @@ function Login() {
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (validateCredentials()) {
+    const isValid = await validateCredentials();
+
+    if (isValid) {
       navigate('/home');
     }
   };
