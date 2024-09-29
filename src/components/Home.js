@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from "./Header";
 import { Table, Card, Container, Row, Col } from "react-bootstrap";
+import { FormattedMessage } from 'react-intl';
 
 function Home() {
   const [robots, setRobots] = useState([]);
@@ -43,10 +44,10 @@ function Home() {
             <Table bordered hover>
               <thead className="table-dark">
                 <tr>
-                  <th>ID</th>
-                  <th>Nombre</th>
-                  <th>Modelo</th>
-                  <th>Empresa Fabricante</th>
+                  <th><FormattedMessage id="table.id" /></th>
+                  <th><FormattedMessage id="table.name" /></th>
+                  <th><FormattedMessage id="table.model" /></th>
+                  <th><FormattedMessage id="table.manufacturer" /></th>
                 </tr>
               </thead>
               <tbody>
@@ -69,9 +70,9 @@ function Home() {
                 <Card.Body>
                   <Card.Title>{selectedRobot.nombre}</Card.Title>
                   <Card.Text>
-                    <strong>Año de Fabricación:</strong> {selectedRobot.añoFabricacion} <br />
-                    <strong>Capacidad de Procesamiento:</strong> {selectedRobot.capacidadProcesamiento} <br />
-                    <strong>Humor:</strong> {selectedRobot.humor}
+                    <strong><FormattedMessage id="details.year" />:</strong> {selectedRobot.añoFabricacion} <br />
+                    <strong><FormattedMessage id="details.capacity" />:</strong> {selectedRobot.capacidadProcesamiento} <br />
+                    <strong><FormattedMessage id="details.mood" />:</strong> {selectedRobot.humor}
                   </Card.Text>
                 </Card.Body>
               </Card>
